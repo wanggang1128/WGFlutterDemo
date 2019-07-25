@@ -38,8 +38,10 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         color: Colors.purple,
+        //预留一个间隙，用来存放floatingActionButton
         shape: CircularNotchedRectangle(),
         child: Row(
+          //主轴对齐方式
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[

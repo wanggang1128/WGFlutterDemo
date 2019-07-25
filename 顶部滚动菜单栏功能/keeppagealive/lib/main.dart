@@ -48,9 +48,9 @@ class _TopNavigatorBarState extends State<TopNavigatorBar> with SingleTickerProv
         bottom: TabBar(
           controller: _tabController,
           tabs: <Widget>[
-            Tab(icon: Icon(Icons.call),text: '电话',),
-            Tab(icon: Icon(Icons.share),text: '分享',),
-            Tab(icon: Icon(Icons.chat),text: '聊天',),
+            Tab(text: '电话',),
+            Tab(text: '分享',),
+            Tab(text: '聊天',),
           ],
         ),
       ),

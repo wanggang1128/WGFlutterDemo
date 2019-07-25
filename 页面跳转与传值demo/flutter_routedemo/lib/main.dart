@@ -5,23 +5,24 @@ class Product{
   String title;
   String description;
 
+  //构造方法,其中this.title代表self.title = title
   Product(this.title, this.description);
 }
 
 main(){
   runApp(MaterialApp(
     title: '导航跳转和数据传递',
-    home: PruductPage(
+    home: ProductPage(
 
       products:List.generate(30, (i)=>Product('商品 $i', '这是商品描述，编号为 $i'))
     )
   ));
 }
 
-class PruductPage extends StatelessWidget{
+class ProductPage extends StatelessWidget{
 
   final List<Product> products;
-  PruductPage({Key key, @required this.products}):super(key:key);
+  ProductPage({Key key, @required this.products}):super(key:key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +34,16 @@ class PruductPage extends StatelessWidget{
       ),
       body: Center(
         child: ListView.builder(
+            //cell个数
             itemCount: products.length,
             itemBuilder: (context, index) {
+              //每一个cell
               return ListTile(
                   title: Text('${products[index].title}'),
                   subtitle: Text('${products[index].description}'),
+                //点击事件
                 onTap: (){
-
                   _tapMethod(context, index);
-//                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PruductDetailPage(product: products[index],)));
                 },
               );
             }
@@ -50,25 +52,27 @@ class PruductPage extends StatelessWidget{
     );
   }
 
+  //异步处理
   _tapMethod(BuildContext context, int index) async {
     final result = await Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context)=>PruductDetailPage(
+            builder: (context)=>ProductDetailPage(
               product: products[index])
         )
     );
     if (null != result){
+      //第一页面提示返回过来的值
       Scaffold.of(context).showSnackBar(SnackBar(content: Text('$result')));
     }
   }
 }
 
 
-class PruductDetailPage extends StatelessWidget{
+class ProductDetailPage extends StatelessWidget{
 
   final Product product;
-  PruductDetailPage({Key key, @required this.product}):super(key:key);
+  ProductDetailPage({Key key, @required this.product}):super(key:key);
 
   @override
   Widget build(BuildContext context) {
