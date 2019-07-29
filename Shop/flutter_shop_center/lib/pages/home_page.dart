@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../service/service_method.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:convert';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,6 +13,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
+
     return Container(
       child: Scaffold(
         appBar: AppBar(title: Text('网络数据请求'),),
@@ -47,7 +51,8 @@ class SwiperDiy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: ScreenUtil().setHeight(333),
+      width: ScreenUtil().setWidth(750),
       child: Swiper(
         itemCount: swiperDataList.length,
         itemBuilder: (context, index){
