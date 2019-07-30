@@ -30,15 +30,35 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                 var data = json.decode(snapShort.data.toString());
                 //轮播图
                 List<Map> swiper = (data['data']['slides'] as List).cast();
+
                 //网格
                 List<Map> topNavigator = (data['data']['category'] as List).cast();
+
                 //广告
                 String adPicUrl = data['data']['advertesPicture']['PICTURE_ADDRESS'];
+
                 //经理电话组件
                 String leaderImageUrl = data['data']['shopInfo']['leaderImage'];
                 String leaderPhone = data['data']['shopInfo']['leaderPhone'];
+
                 //推荐商品
                 List<Map> recommendList = (data['data']['recommend'] as List).cast();
+                
+                //楼层标题
+                String floor1Title = data['data']['floor1Pic']['PICTURE_ADDRESS'];
+                //楼层内容
+                List<Map> floor1List = (data['data']['floor1'] as List).cast();
+
+                //楼层标题
+                String floor2Title = data['data']['floor2Pic']['PICTURE_ADDRESS'];
+                //楼层内容
+                List<Map> floor2List = (data['data']['floor2'] as List).cast();
+
+                //楼层标题
+                String floor3Title = data['data']['floor3Pic']['PICTURE_ADDRESS'];
+                //楼层内容
+                List<Map> floor3List = (data['data']['floor3'] as List).cast();
+
                 return SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
@@ -47,6 +67,12 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                       AdBanner(adPicUrl: adPicUrl,),
                       LeaderPhone(leaderImageUrl: leaderImageUrl, leaderPhone: leaderPhone,),
                       Recommend(recommendList: recommendList,),
+                      FloorTitle(floorTitle: floor1Title,),
+                      FloorContent(floorContent: floor1List,),
+                      FloorTitle(floorTitle: floor2Title,),
+                      FloorContent(floorContent: floor2List,),
+                      FloorTitle(floorTitle: floor3Title,),
+                      FloorContent(floorContent: floor3List,),
                     ],
                   ),
                 );
@@ -252,6 +278,74 @@ class Recommend extends StatelessWidget {
         children: <Widget>[
           _titleWidget(),
           _listView()
+        ],
+      ),
+    );
+  }
+}
+
+//楼层标题组件
+class FloorTitle extends StatelessWidget {
+
+  final String floorTitle;
+  FloorTitle({this.floorTitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(8.0),
+      child: Image.network(floorTitle),
+    );
+  }
+}
+
+//楼层内容组件
+class FloorContent extends StatelessWidget {
+
+  final List floorContent;
+  FloorContent({this.floorContent});
+
+  //商品item
+  Widget _floorGoodsItem(goods){
+    return Container(
+      width: ScreenUtil().setWidth(375.0),
+      child: InkWell(
+        onTap: (){},
+        child: Image.network(goods['image']),
+      ),
+    );
+  }
+
+  Widget _firstRow(){
+    return Row(
+      children: <Widget>[
+        _floorGoodsItem(floorContent[0]),
+        Column(
+          children: <Widget>[
+            _floorGoodsItem(floorContent[1]),
+            _floorGoodsItem(floorContent[2]),
+          ],
+        )
+      ],
+    );
+  }
+
+  Widget _secondRow(){
+    return Row(
+      children: <Widget>[
+        _floorGoodsItem(floorContent[3]),
+        _floorGoodsItem(floorContent[4]),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          _firstRow(),
+          _secondRow()
         ],
       ),
     );
