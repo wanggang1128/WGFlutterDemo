@@ -39,7 +39,7 @@ class _IndexPageState extends State<IndexPage> {
     ),
   ];
 
-  final List pageList = [
+  final List<Widget> pageList = [
     HomePage(),
     CategoryPage(),
     CartPage(),
@@ -74,7 +74,10 @@ class _IndexPageState extends State<IndexPage> {
           });
         },
       ),
-      body: currentPage ,
+      body: IndexedStack(
+        index: currentIndex,
+        children: pageList,
+      ) ,
     );
   }
 }
