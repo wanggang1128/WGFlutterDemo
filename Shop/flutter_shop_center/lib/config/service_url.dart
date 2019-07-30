@@ -3,5 +3,7 @@ const servicePath = {
   //商品首页信息
   'homePageContent':serviceUrl+'wxmini/homePageContent',
   //商城首页热卖商品
-  'homePageBelowConten':serviceUrl+'wxmini/homePageBelowConten'
+  'homePageBelowConten':serviceUrl+'wxmini/homePageBelowConten',
+  //商品类别信息
+  'getCategory':serviceUrl+'wxmini/getCategory',
 };
