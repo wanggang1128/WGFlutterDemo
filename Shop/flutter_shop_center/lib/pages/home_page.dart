@@ -41,7 +41,12 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
               if(snapShort.hasData){
                 var data = json.decode(snapShort.data.toString());
                 //轮播图
-                List<Map> swiper = (data['data']['slides'] as List).cast();
+                List<Map> swiper;
+                if(data['data']['slides'] != null){
+                  swiper = (data['data']['slides'] as List).cast();
+                }else{
+                  swiper = [];
+                }
 
                 //网格
                 List<Map> topNavigator = (data['data']['category'] as List).cast();
