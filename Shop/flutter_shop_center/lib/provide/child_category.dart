@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../model/category.dart';
 
+//点击左侧导航，右侧显示顶部导航
+
 class ChildCategory with ChangeNotifier{
 
   List<BxMallSubDto> childCategoryList = [];

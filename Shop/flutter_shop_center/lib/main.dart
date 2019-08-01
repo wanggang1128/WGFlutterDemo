@@ -5,13 +5,18 @@ import './pages/index_page.dart';
 import 'package:provide/provide.dart';
 import './provide/counter.dart';
 import './provide/child_category.dart';
+import './provide/child_category_goods_list.dart';
 
 void main(){
   var counter = Counter();
   var childCategory = ChildCategory();
+  var childCategoryGoodsListProvide = ChildCategoryGoodsListProvide();
   var provides = Providers();
-  provides..provide(Provider<Counter>.value(counter))
-  ..provide(Provider<ChildCategory>.value(childCategory));
+  provides
+    ..provide(Provider<Counter>.value(counter))
+    ..provide(Provider<ChildCategory>.value(childCategory))
+    ..provide(Provider<ChildCategoryGoodsListProvide>.value(childCategoryGoodsListProvide));
+
   runApp(ProviderNode(child: MyApp(), providers: provides));
 }
 
