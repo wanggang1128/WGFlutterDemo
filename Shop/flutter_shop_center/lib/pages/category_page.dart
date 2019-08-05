@@ -69,7 +69,7 @@ class _LeftCategoryViewState extends State<LeftCategoryView> {
         list = listModel.data;
       });
       //解决第一次进入分类界面时，右侧导航没有值
-      Provide.value<ChildCategory>(context).getChildCategoryList(list[0].bxMallSubDto);
+      Provide.value<ChildCategory>(context).getChildCategoryList(list[0].bxMallSubDto,list[0].mallCategoryId);
     });
   }
 
@@ -105,7 +105,7 @@ class _LeftCategoryViewState extends State<LeftCategoryView> {
         var childList = list[index].bxMallSubDto;
         var categoryId = list[index].mallCategoryId;
         //给右侧顶部导航提供数据
-        Provide.value<ChildCategory>(context).getChildCategoryList(childList);
+        Provide.value<ChildCategory>(context).getChildCategoryList(childList, categoryId);
         //给右侧商品列表提供数据
         getCategoryGoodsListData(categoryId: categoryId);
 
@@ -147,13 +147,32 @@ class _LeftCategoryViewState extends State<LeftCategoryView> {
   }
 }
 
-//右侧导航详情
+//右侧导航标题栏
 class RightCategoryView extends StatefulWidget {
   @override
   _RightCategoryViewState createState() => _RightCategoryViewState();
 }
 
 class _RightCategoryViewState extends State<RightCategoryView> {
+
+  //点击右侧导航按钮之后，右侧对应的商品列表请求
+  void getCategoryGoodsListData(String categorySubId) async {
+
+    var formDate = {
+      'categoryId':Provide.value<ChildCategory>(context).categoryId,
+      'categorySubId':categorySubId,
+      'page':1
+    };
+    await requestPost('getMallGoods', formData: formDate).then((val){
+      var data = json.decode(val.toString());
+      CategoryGoodsListModel model = CategoryGoodsListModel.fromJson(data);
+      if (model.data == null){
+        Provide.value<ChildCategoryGoodsListProvide>(context).getChildCategoryGoodsList([]);
+      }else{
+        Provide.value<ChildCategoryGoodsListProvide>(context).getChildCategoryGoodsList(model.data);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -170,7 +189,7 @@ class _RightCategoryViewState extends State<RightCategoryView> {
             scrollDirection: Axis.horizontal,
             itemCount: childCategory.childCategoryList.length,
             itemBuilder: (context, index){
-              return _rightTitleItem(childCategory.childCategoryList[index]);
+              return _rightTitleItem(index,childCategory.childCategoryList[index]);
             },
           );
         },
@@ -178,12 +197,21 @@ class _RightCategoryViewState extends State<RightCategoryView> {
     );
   }
 
-  Widget _rightTitleItem(BxMallSubDto item){
+  Widget _rightTitleItem(int index, BxMallSubDto item){
+
+    bool isClick = false;
+    isClick = (index==Provide.value<ChildCategory>(context).childIndex)?true:false;
+
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        //改变高亮
+        Provide.value<ChildCategory>(context).changeChildIndex(index);
+        //商品列表请求
+        getCategoryGoodsListData(item.mallSubId);
+      },
       child: Container(
         padding: EdgeInsets.fromLTRB(8, 10, 8, 10),
-        child: Text(item.mallSubName, style: TextStyle(fontSize: ScreenUtil().setSp(28)),),
+        child: Text(item.mallSubName, style: TextStyle(fontSize: ScreenUtil().setSp(28), color: isClick?Colors.pink:Colors.black),),
       ),
     );
   }
@@ -202,16 +230,22 @@ class _RightCategoryGoodsListViewState extends State<RightCategoryGoodsListView>
 
     return Provide<ChildCategoryGoodsListProvide>(
       builder: (context, child, data){
-        return Container(
-          width: ScreenUtil().setWidth(750.0-180.0),
-          height: ScreenUtil().setWidth(1000),
-          child: ListView.builder(
-            itemCount: data.childCategoryGoodsList.length,
-            itemBuilder: (context, index){
-              return _goodsItem(data.childCategoryGoodsList[index]);
-            },
-          ),
-        );
+        if(data.childCategoryGoodsList.length>0){
+          //Expanded伸缩控件
+          return Expanded(
+            child: Container(
+              width: ScreenUtil().setWidth(750.0-180.0),
+              child: ListView.builder(
+                itemCount: data.childCategoryGoodsList.length,
+                itemBuilder: (context, index){
+                  return _goodsItem(data.childCategoryGoodsList[index]);
+                },
+              ),
+            ),
+          );
+        }else{
+          return Text('暂无数据');
+        }
       },
     );
   }
