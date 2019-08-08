@@ -8,13 +8,14 @@ class DetailsInfoProvide with ChangeNotifier {
   DetailsModel detailsModel;
 
   //请求商品信息
-  getGoodsInfo(String id){
+  getGoodsInfo(String id) async {
 
     var formData = {'goodId':id};
-    requestPost('getGoodDetailById', formData: formData).then((val){
+    await requestPost('getGoodDetailById', formData: formData).then((val){
 
-      var resData = json.decode(val.toString());
-      detailsModel = DetailsModel.fromJson(resData);
+      var responseData= json.decode(val.toString());
+      detailsModel=DetailsModel.fromJson(responseData);
+
       notifyListeners();
     });
   }
