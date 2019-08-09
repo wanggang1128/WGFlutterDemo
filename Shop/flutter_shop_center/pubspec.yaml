@@ -31,6 +31,7 @@ dependencies:
   provide: ^1.0.2
   fluttertoast: ^3.1.0
   fluro: ^1.5.1
+  flutter_html: ^0.9.6
 
 dev_dependencies:
   flutter_test:

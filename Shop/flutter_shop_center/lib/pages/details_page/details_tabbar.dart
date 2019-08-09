@@ -50,7 +50,8 @@ class DetailsTabBar extends StatelessWidget {
           title,
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: isSelected?Colors.pink:Colors.black12,
+            color: isSelected?Colors.pink:Colors.black,
+            fontSize: isSelected?ScreenUtil().setSp(35):ScreenUtil().setSp(30)
           ),
         ),
       ),
