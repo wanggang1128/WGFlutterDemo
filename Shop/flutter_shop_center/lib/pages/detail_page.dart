@@ -3,6 +3,9 @@ import '../provide/details_info.dart';
 import 'package:provide/provide.dart';
 
 import './details_page/details_top_area.dart';
+import 'details_page/details_explain.dart';
+import 'details_page/details_tabbar.dart';
+
 
 class DetailsPage extends StatelessWidget {
   final String goodsId;
@@ -17,6 +20,8 @@ class DetailsPage extends StatelessWidget {
         leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: (){
+              //重置DetailsTabBar选中状态
+              Provide.value<DetailsInfoProvide>(context).changeDetailsTabbar('left');
               Navigator.pop(context);
             }
         ),
@@ -27,9 +32,11 @@ class DetailsPage extends StatelessWidget {
         builder: (context, snapShot){
           if(snapShot.hasData){
             return Container(
-              child: Column(
+              child: ListView(
                 children: <Widget>[
                   DetailTopArea(),
+                  DetailsExplain(),
+                  DetailsTabBar(),
                 ],
               )
             );

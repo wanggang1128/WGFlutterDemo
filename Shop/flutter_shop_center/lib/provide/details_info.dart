@@ -7,6 +7,24 @@ class DetailsInfoProvide with ChangeNotifier {
 
   DetailsModel detailsModel;
 
+  //tabBar是否选中
+  bool isLeft = true;
+  bool isRight = false;
+
+  //改变tabBar的状态
+  changeDetailsTabbar(String changeState){
+
+    if(changeState == 'left'){
+      isLeft = true;
+      isRight = false;
+    }else{
+
+      isLeft = false;
+      isRight = true;
+    }
+    notifyListeners();
+  }
+
   //请求商品信息
   getGoodsInfo(String id) async {
 
