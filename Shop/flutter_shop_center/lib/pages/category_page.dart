@@ -13,6 +13,9 @@ import '../provide/child_category_goods_list.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import '../routers/application.dart';
+
+
 class CategoryPage extends StatefulWidget {
   @override
   _CategoryPageState createState() => _CategoryPageState();
@@ -321,7 +324,9 @@ class _RightCategoryGoodsListViewState extends State<RightCategoryGoodsListView>
         )
       ),
       child: InkWell(
-        onTap: (){},
+        onTap: (){
+          Application.router.navigateTo(context, '/detail?id=${item.goodsId}');
+        },
         child: Row(
           children: <Widget>[
             _itemImage(item),

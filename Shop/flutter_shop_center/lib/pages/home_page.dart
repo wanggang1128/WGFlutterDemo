@@ -9,14 +9,13 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 import '../routers/application.dart';
 
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
-
+class _HomePageState extends State<HomePage>
+    with AutomaticKeepAliveClientMixin {
   //下拉加载属性
   int page = 1;
   List<Map> hotGoodsList = [];
@@ -28,104 +27,135 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
 
   @override
   Widget build(BuildContext context) {
-
-    var formData = {
-      'lon':'115.02932',
-      'lat':'35.76189'
-    };
+    var formData = {'lon': '115.02932', 'lat': '35.76189'};
 
     return Container(
       child: Scaffold(
-        appBar: AppBar(title: Text('百姓生活+'),),
-        //FutureBuilder可以异步处理请求
-        body: FutureBuilder(
-          future: requestPost('homePageContent', formData: formData),
-            builder: (context, snapShort){
-              if(snapShort.hasData){
-                var data = json.decode(snapShort.data.toString());
-                //轮播图
-                List<Map> swiper;
-                if(data['data']['slides'] != null){
-                  swiper = (data['data']['slides'] as List).cast();
-                }else{
-                  swiper = [];
-                }
+          appBar: AppBar(
+            title: Text('百姓生活+'),
+          ),
+          //FutureBuilder可以异步处理请求
+          body: FutureBuilder(
+              future: requestPost('homePageContent', formData: formData),
+              builder: (context, snapShort) {
+                if (snapShort.hasData) {
+                  var data = json.decode(snapShort.data.toString());
+                  //轮播图
+                  List<Map> swiper;
+                  if (data['data']['slides'] != null) {
+                    swiper = (data['data']['slides'] as List).cast();
+                  } else {
+                    swiper = [];
+                  }
 
-                //网格
-                List<Map> topNavigator = (data['data']['category'] as List).cast();
+                  //网格
+                  List<Map> topNavigator =
+                      (data['data']['category'] as List).cast();
 
-                //广告
-                String adPicUrl = data['data']['advertesPicture']['PICTURE_ADDRESS'];
+                  //广告
+                  String adPicUrl =
+                      data['data']['advertesPicture']['PICTURE_ADDRESS'];
 
-                //经理电话组件
-                String leaderImageUrl = data['data']['shopInfo']['leaderImage'];
-                String leaderPhone = data['data']['shopInfo']['leaderPhone'];
+                  //经理电话组件
+                  String leaderImageUrl =
+                      data['data']['shopInfo']['leaderImage'];
+                  String leaderPhone = data['data']['shopInfo']['leaderPhone'];
 
-                //推荐商品
-                List<Map> recommendList = (data['data']['recommend'] as List).cast();
+                  //推荐商品
+                  List<Map> recommendList =
+                      (data['data']['recommend'] as List).cast();
 
-                //楼层标题
-                String floor1Title = data['data']['floor1Pic']['PICTURE_ADDRESS'];
-                //楼层内容
-                List<Map> floor1List = (data['data']['floor1'] as List).cast();
+                  //楼层标题
+                  String floor1Title =
+                      data['data']['floor1Pic']['PICTURE_ADDRESS'];
+                  //楼层内容
+                  List<Map> floor1List =
+                      (data['data']['floor1'] as List).cast();
 
-                //楼层标题
-                String floor2Title = data['data']['floor2Pic']['PICTURE_ADDRESS'];
-                //楼层内容
-                List<Map> floor2List = (data['data']['floor2'] as List).cast();
+                  //楼层标题
+                  String floor2Title =
+                      data['data']['floor2Pic']['PICTURE_ADDRESS'];
+                  //楼层内容
+                  List<Map> floor2List =
+                      (data['data']['floor2'] as List).cast();
 
-                //楼层标题
-                String floor3Title = data['data']['floor3Pic']['PICTURE_ADDRESS'];
-                //楼层内容
-                List<Map> floor3List = (data['data']['floor3'] as List).cast();
+                  //楼层标题
+                  String floor3Title =
+                      data['data']['floor3Pic']['PICTURE_ADDRESS'];
+                  //楼层内容
+                  List<Map> floor3List =
+                      (data['data']['floor3'] as List).cast();
 
-                return EasyRefresh(
-                  refreshFooter: ClassicsFooter(
-                    key: _footKey,
-                    bgColor: Colors.white,
-                    textColor: Colors.pink,
-                    showMore: true,
-                    moreInfoColor: Colors.pink,
-                    noMoreText: '',
-                    moreInfo: '加载中',
-                    loadReadyText: '上拉加载...',
-                  ),
-                  child: ListView(
-                    children: <Widget>[
-                      SwiperDiy(swiperDataList: swiper,),
-                      TopNavigator(navigatorList: topNavigator,),
-                      AdBanner(adPicUrl: adPicUrl,),
-                      LeaderPhone(leaderImageUrl: leaderImageUrl, leaderPhone: leaderPhone,),
-                      Recommend(recommendList: recommendList,),
-                      FloorTitle(floorTitle: floor1Title,),
-                      FloorContent(floorContent: floor1List,),
-                      FloorTitle(floorTitle: floor2Title,),
-                      FloorContent(floorContent: floor2List,),
-                      FloorTitle(floorTitle: floor3Title,),
-                      FloorContent(floorContent: floor3List,),
-                      _hotWidget(),
-                    ],
-                  ),
-                  loadMore: () async {
-                    var formData = {'page':page};
-                    await requestPost('homePageBelowConten',formData: formData).then((val){
-                      var data = json.decode(val.toString());
-                      List<Map> newGoodsList = (data['data'] as List).cast();
-                      setState(() {
-                        hotGoodsList.addAll(newGoodsList);
-                        page ++;
+                  return EasyRefresh(
+                    refreshFooter: ClassicsFooter(
+                      key: _footKey,
+                      bgColor: Colors.white,
+                      textColor: Colors.pink,
+                      showMore: true,
+                      moreInfoColor: Colors.pink,
+                      noMoreText: '',
+                      moreInfo: '加载中',
+                      loadReadyText: '上拉加载...',
+                    ),
+                    child: ListView(
+                      children: <Widget>[
+                        SwiperDiy(
+                          swiperDataList: swiper,
+                        ),
+                        TopNavigator(
+                          navigatorList: topNavigator,
+                        ),
+                        AdBanner(
+                          adPicUrl: adPicUrl,
+                        ),
+                        LeaderPhone(
+                          leaderImageUrl: leaderImageUrl,
+                          leaderPhone: leaderPhone,
+                        ),
+                        Recommend(
+                          recommendList: recommendList,
+                        ),
+                        FloorTitle(
+                          floorTitle: floor1Title,
+                        ),
+                        FloorContent(
+                          floorContent: floor1List,
+                        ),
+                        FloorTitle(
+                          floorTitle: floor2Title,
+                        ),
+                        FloorContent(
+                          floorContent: floor2List,
+                        ),
+                        FloorTitle(
+                          floorTitle: floor3Title,
+                        ),
+                        FloorContent(
+                          floorContent: floor3List,
+                        ),
+                        _hotWidget(),
+                      ],
+                    ),
+                    loadMore: () async {
+                      var formData = {'page': page};
+                      await requestPost('homePageBelowConten',
+                              formData: formData)
+                          .then((val) {
+                        var data = json.decode(val.toString());
+                        List<Map> newGoodsList = (data['data'] as List).cast();
+                        setState(() {
+                          hotGoodsList.addAll(newGoodsList);
+                          page++;
+                        });
                       });
-                    });
-                  },
-                );
-              }else{
-                return Center(
-                  child: Text('加载中......'),
-                );
-              }
-            }
-        )
-      ),
+                    },
+                  );
+                } else {
+                  return Center(
+                    child: Text('加载中......'),
+                  );
+                }
+              })),
     );
   }
 
@@ -136,14 +166,13 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
     color: Colors.transparent,
   );
 
-  Widget _wrapList(){
-    if(hotGoodsList.length!=0){
-
-      List<Widget> widgetList = hotGoodsList.map((val){
-
+  Widget _wrapList() {
+    if (hotGoodsList.length != 0) {
+      List<Widget> widgetList = hotGoodsList.map((val) {
         return InkWell(
-          onTap: (){
-            Application.router.navigateTo(context, '/detail?id=${val['goodsId']}');
+          onTap: () {
+            Application.router
+                .navigateTo(context, '/detail?id=${val['goodsId']}');
           },
           child: Container(
             width: ScreenUtil().setWidth(372),
@@ -152,19 +181,25 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
             margin: EdgeInsets.only(bottom: 3.0),
             child: Column(
               children: <Widget>[
-                Image.network(val['image'],width: ScreenUtil().setWidth(370),),
+                Image.network(
+                  val['image'],
+                  width: ScreenUtil().setWidth(370),
+                ),
                 Text(
                   val['name'],
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(color: Colors.pink,fontSize: ScreenUtil().setSp(26)),
+                  style: TextStyle(
+                      color: Colors.pink, fontSize: ScreenUtil().setSp(26)),
                 ),
                 Row(
                   children: <Widget>[
                     Text('￥${val['mallPrice']}'),
                     Text(
                       '￥${val['price']}',
-                      style: TextStyle(color: Colors.black26,decoration: TextDecoration.lineThrough),
+                      style: TextStyle(
+                          color: Colors.black26,
+                          decoration: TextDecoration.lineThrough),
                     )
                   ],
                 ),
@@ -179,20 +214,16 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
         //一行2列
         spacing: 2,
       );
-
-    }else{
+    } else {
       return Text('');
     }
   }
 
   //火爆商品组件
-  Widget _hotWidget(){
+  Widget _hotWidget() {
     return Container(
       child: Column(
-        children: <Widget>[
-          _hotTitle,
-          _wrapList()
-        ],
+        children: <Widget>[_hotTitle, _wrapList()],
       ),
     );
   }
@@ -200,8 +231,8 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
 
 //首页轮播图组件
 class SwiperDiy extends StatelessWidget {
-
   final List swiperDataList;
+
   SwiperDiy({this.swiperDataList});
 
   @override
@@ -211,14 +242,16 @@ class SwiperDiy extends StatelessWidget {
       width: ScreenUtil().setWidth(750),
       child: Swiper(
         itemCount: swiperDataList.length,
-        itemBuilder: (context, index){
+        itemBuilder: (context, index) {
           return InkWell(
               onTap: () {
-
-                Application.router.navigateTo(context, '/detail?id=${swiperDataList[index]['goodsId']}');
+                Application.router.navigateTo(
+                    context, '/detail?id=${swiperDataList[index]['goodsId']}');
               },
-              child: Image.network('${swiperDataList[index]['image']}',fit: BoxFit.fill,)
-          );
+              child: Image.network(
+                '${swiperDataList[index]['image']}',
+                fit: BoxFit.fill,
+              ));
         },
         pagination: SwiperPagination(),
         autoplay: true,
@@ -229,16 +262,19 @@ class SwiperDiy extends StatelessWidget {
 
 //网格组件
 class TopNavigator extends StatelessWidget {
-
   final List navigatorList;
-  TopNavigator({Key key, this.navigatorList}):super(key:key);
 
-  Widget _gridViewItem(BuildContext context, item){
+  TopNavigator({Key key, this.navigatorList}) : super(key: key);
+
+  Widget _gridViewItem(BuildContext context, item) {
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: Column(
         children: <Widget>[
-          Image.network(item['image'],width: ScreenUtil().setWidth(95),),
+          Image.network(
+            item['image'],
+            width: ScreenUtil().setWidth(95),
+          ),
           Text(item['mallCategoryName'])
         ],
       ),
@@ -247,9 +283,8 @@ class TopNavigator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     //这里只需要10个，为了好看而已
-    if(navigatorList.length>10){
+    if (navigatorList.length > 10) {
       navigatorList.removeRange(10, navigatorList.length);
     }
 
@@ -261,7 +296,7 @@ class TopNavigator extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         crossAxisCount: 5,
         padding: EdgeInsets.all(5.0),
-        children: navigatorList.map((item){
+        children: navigatorList.map((item) {
           return _gridViewItem(context, item);
         }).toList(),
       ),
@@ -271,8 +306,8 @@ class TopNavigator extends StatelessWidget {
 
 //广告组件
 class AdBanner extends StatelessWidget {
-
   final String adPicUrl;
+
   AdBanner({this.adPicUrl});
 
   @override
@@ -285,9 +320,9 @@ class AdBanner extends StatelessWidget {
 
 //经理电话组件
 class LeaderPhone extends StatelessWidget {
-
   final String leaderImageUrl;
   final String leaderPhone;
+
   LeaderPhone({this.leaderImageUrl, this.leaderPhone});
 
   @override
@@ -301,11 +336,11 @@ class LeaderPhone extends StatelessWidget {
   }
 
   void _phoneClicked() async {
-    String url = 'tel:'+leaderPhone;
+    String url = 'tel:' + leaderPhone;
 //  String url = 'https://www.jianshu.com/u/c9dfc3858121';
-    if(await canLaunch(url)){
+    if (await canLaunch(url)) {
       await launch(url);
-    }else{
+    } else {
       throw '拨打电话url异常';
     }
   }
@@ -313,44 +348,44 @@ class LeaderPhone extends StatelessWidget {
 
 //商品推荐
 class Recommend extends StatelessWidget {
-
   //数据源数组
   final List recommendList;
+
   Recommend({this.recommendList});
 
   //接下来需要新建三个组件：商品推荐标题、每一个商品item、横向排列item
 
   //商品推荐标题
-  Widget _titleWidget(){
+  Widget _titleWidget() {
     return Container(
       padding: EdgeInsets.fromLTRB(10.0, 2.0, 5.0, 2.0),
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border(
-          bottom: BorderSide(color: Colors.black12, width: 0.5)
-        )
+          color: Colors.white,
+          border:
+              Border(bottom: BorderSide(color: Colors.black12, width: 0.5))),
+      child: Text(
+        '商品推荐',
+        style: TextStyle(color: Colors.pink),
       ),
-      child: Text('商品推荐',style: TextStyle(color: Colors.pink),),
     );
   }
 
   //每一个商品item
-  Widget _item(context, int index){
+  Widget _item(context, int index) {
     return InkWell(
-      onTap: (){
-        Application.router.navigateTo(context, '/detail?id=${recommendList[index]['goodsId']}');
+      onTap: () {
+        Application.router.navigateTo(
+            context, '/detail?id=${recommendList[index]['goodsId']}');
       },
       child: Container(
         height: ScreenUtil().setHeight(330),
         width: ScreenUtil().setWidth(250),
         padding: EdgeInsets.all(5.0),
         decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border(
-              left: BorderSide(color: Colors.black12, width: 0.5)
-          )
-        ),
+            color: Colors.white,
+            border:
+                Border(left: BorderSide(color: Colors.black12, width: 0.5))),
         child: Column(
           children: <Widget>[
             Image.network(recommendList[index]['image']),
@@ -358,9 +393,7 @@ class Recommend extends StatelessWidget {
             Text(
               '￥${recommendList[index]['price']}',
               style: TextStyle(
-                decoration: TextDecoration.lineThrough,
-                color: Colors.grey
-              ),
+                  decoration: TextDecoration.lineThrough, color: Colors.grey),
             ),
           ],
         ),
@@ -369,24 +402,22 @@ class Recommend extends StatelessWidget {
   }
 
   //横向排列item
-  Widget _listView(context){
+  Widget _listView(context) {
     return Container(
       height: ScreenUtil().setHeight(300),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index){
-          return _item(context,index);
+        itemBuilder: (context, index) {
+          return _item(context, index);
         },
         itemCount: recommendList.length,
       ),
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
-
-    if (recommendList.length<3){
+    if (recommendList.length < 3) {
       //添加一个，为了好看
       recommendList.add(recommendList.last);
     }
@@ -395,10 +426,7 @@ class Recommend extends StatelessWidget {
       height: ScreenUtil().setHeight(350),
       margin: EdgeInsets.only(top: 10.0),
       child: Column(
-        children: <Widget>[
-          _titleWidget(),
-          _listView(context)
-        ],
+        children: <Widget>[_titleWidget(), _listView(context)],
       ),
     );
   }
@@ -406,8 +434,8 @@ class Recommend extends StatelessWidget {
 
 //楼层标题组件
 class FloorTitle extends StatelessWidget {
-
   final String floorTitle;
+
   FloorTitle({this.floorTitle});
 
   @override
@@ -421,42 +449,43 @@ class FloorTitle extends StatelessWidget {
 
 //楼层内容组件
 class FloorContent extends StatelessWidget {
-
   final List floorContent;
+
   FloorContent({this.floorContent});
 
   //商品item
-  Widget _floorGoodsItem(context,goods){
+  Widget _floorGoodsItem(context, goods) {
     return Container(
       width: ScreenUtil().setWidth(375.0),
       child: InkWell(
-        onTap: (){
-          Application.router.navigateTo(context, '/detail?id=${goods['goodsId']}');
+        onTap: () {
+          Application.router
+              .navigateTo(context, '/detail?id=${goods['goodsId']}');
         },
         child: Image.network(goods['image']),
       ),
     );
   }
 
-  Widget _firstRow(context){
+  Widget _firstRow(context) {
     return Row(
       children: <Widget>[
-        _floorGoodsItem(context,floorContent[0]),
+        _floorGoodsItem(context, floorContent[0]),
         Column(
           children: <Widget>[
-            _floorGoodsItem(context,floorContent[1]),
-            _floorGoodsItem(context,floorContent[2]),
+            _floorGoodsItem(context, floorContent[1]),
+            _floorGoodsItem(context, floorContent[2]),
           ],
         )
       ],
     );
   }
 
-  Widget _secondRow(context){
+  Widget _secondRow(context) {
     return Row(
       children: <Widget>[
-        _floorGoodsItem(context,floorContent[3]),
-        _floorGoodsItem(context,floorContent[4]),
+        _floorGoodsItem(context, floorContent[3]),
+        _floorGoodsItem(context, floorContent[4]),
       ],
     );
   }
@@ -465,13 +494,8 @@ class FloorContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: <Widget>[
-          _firstRow(context),
-          _secondRow(context)
-        ],
+        children: <Widget>[_firstRow(context), _secondRow(context)],
       ),
     );
   }
 }
-
-
