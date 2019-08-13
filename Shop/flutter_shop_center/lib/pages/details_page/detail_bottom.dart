@@ -5,6 +5,8 @@ import 'package:provide/provide.dart';
 import '../../provide/cart.dart';
 import '../../provide/details_info.dart';
 
+import '../../provide/currentIndex.dart';
+
 class DetailBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,9 @@ class DetailBottom extends StatelessWidget {
 
     return InkWell(
       onTap: (){
+        //购物车索引为2
+        Provide.value<CurrentIndexProvide>(context).changeIndex(2);
+        Navigator.pop(context);
       },
       child: Container(
         width: ScreenUtil().setWidth(110),
