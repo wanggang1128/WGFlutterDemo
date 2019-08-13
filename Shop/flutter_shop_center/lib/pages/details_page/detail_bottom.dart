@@ -1,24 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:provide/provide.dart';
+import '../../provide/cart.dart';
+import '../../provide/details_info.dart';
+
 class DetailBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
 
+    return Container(
       child: Row(
         children: <Widget>[
-          _getCartWidget(),
-          _getAddWidget(),
-          _getBuyWidget()
+          _getCartWidget(context),
+          _getAddWidget(context),
+          _getBuyWidget(context)
         ],
       ),
     );
   }
 
-  Widget _getCartWidget(){
+  Widget _getCartWidget(context){
+
     return InkWell(
-      onTap: (){},
+      onTap: (){
+      },
       child: Container(
         width: ScreenUtil().setWidth(110),
         height: ScreenUtil().setHeight(80),
@@ -33,9 +39,20 @@ class DetailBottom extends StatelessWidget {
     );
   }
 
-  Widget _getAddWidget(){
+  Widget _getAddWidget(context){
+
+    var goodsInfo = Provide.value<DetailsInfoProvide>(context).detailsModel.data.goodInfo;
+
+    var goodsID= goodsInfo.goodsId;
+    var goodsName =goodsInfo.goodsName;
+    var count =1;
+    var price =goodsInfo.presentPrice;
+    var images= goodsInfo.image1;
+
     return InkWell(
-      onTap: (){},
+      onTap: () async {
+        await Provide.value<CartProvide>(context).save(goodsID,goodsName,count,price,images);
+      },
       child: Container(
         color: Colors.green,
         width: ScreenUtil().setWidth(320),
@@ -53,9 +70,20 @@ class DetailBottom extends StatelessWidget {
     );
   }
 
-  Widget _getBuyWidget(){
+  Widget _getBuyWidget(context){
+
+    var goodsInfo = Provide.value<DetailsInfoProvide>(context).detailsModel.data.goodInfo;
+
+    var goodsID= goodsInfo.goodsId;
+    var goodsName =goodsInfo.goodsName;
+    var count =1;
+    var price =goodsInfo.presentPrice;
+    var images= goodsInfo.image1;
+
     return InkWell(
-      onTap: (){},
+      onTap: () async {
+        await Provide.value<CartProvide>(context).remove();
+      },
       child: Container(
         color: Colors.red,
         width: ScreenUtil().setWidth(320),
