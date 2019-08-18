@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09EEB7A6803E5575E73BAE8B /* libPods-FlutterInteraction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1547189AD6BDFFE0CD931E03 /* libPods-FlutterInteraction.a */; };
+		3219574D2303A69E006B6EFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3219574C2303A69E006B6EFB /* AppDelegate.m */; };
+		321957502303A69E006B6EFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3219574F2303A69E006B6EFB /* ViewController.m */; };
+		321957552303A69F006B6EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321957542303A69F006B6EFB /* Assets.xcassets */; };
+		321957582303A69F006B6EFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321957562303A69F006B6EFB /* LaunchScreen.storyboard */; };
+		3219575B2303A69F006B6EFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3219575A2303A69F006B6EFB /* main.m */; };
+		321957652303A69F006B6EFB /* FlutterInteractionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 321957642303A69F006B6EFB /* FlutterInteractionTests.m */; };
+		321957702303A69F006B6EFB /* FlutterInteractionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3219576F2303A69F006B6EFB /* FlutterInteractionUITests.m */; };
+		32DA96EC23064C5A00DA145D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DA96EB23064C5A00DA145D /* FirstViewController.m */; };
+		A4C807DA3CE8C30F99CF64D3 /* libPods-FlutterInteractionUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60849A80D4049C79527A68CF /* libPods-FlutterInteractionUITests.a */; };
+		AFBAE0A9AFD99D30D3BF138A /* libPods-FlutterInteractionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BD7A7EAD4F513CA1D9688E /* libPods-FlutterInteractionTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		321957612303A69F006B6EFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 321957402303A69E006B6EFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 321957472303A69E006B6EFB;
+			remoteInfo = FlutterInteraction;
+		};
+		3219576C2303A69F006B6EFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 321957402303A69E006B6EFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 321957472303A69E006B6EFB;
+			remoteInfo = FlutterInteraction;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1547189AD6BDFFE0CD931E03 /* libPods-FlutterInteraction.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlutterInteraction.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C7701425190BFBCEEF29E0 /* Pods-FlutterInteraction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterInteraction.debug.xcconfig"; path = "Target Support Files/Pods-FlutterInteraction/Pods-FlutterInteraction.debug.xcconfig"; sourceTree = "<group>"; };
+		321957482303A69E006B6EFB /* FlutterInteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlutterInteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3219574B2303A69E006B6EFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3219574C2303A69E006B6EFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3219574E2303A69E006B6EFB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3219574F2303A69E006B6EFB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		321957542303A69F006B6EFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		321957572303A69F006B6EFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		321957592303A69F006B6EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3219575A2303A69F006B6EFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		321957602303A69F006B6EFB /* FlutterInteractionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlutterInteractionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		321957642303A69F006B6EFB /* FlutterInteractionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterInteractionTests.m; sourceTree = "<group>"; };
+		321957662303A69F006B6EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3219576B2303A69F006B6EFB /* FlutterInteractionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlutterInteractionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3219576F2303A69F006B6EFB /* FlutterInteractionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterInteractionUITests.m; sourceTree = "<group>"; };
+		321957712303A69F006B6EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32DA96EA23064C5A00DA145D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		32DA96EB23064C5A00DA145D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		43FFE560D706F43E143FB1F7 /* Pods-FlutterInteractionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterInteractionTests.debug.xcconfig"; path = "Target Support Files/Pods-FlutterInteractionTests/Pods-FlutterInteractionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		60849A80D4049C79527A68CF /* libPods-FlutterInteractionUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlutterInteractionUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62BD7A7EAD4F513CA1D9688E /* libPods-FlutterInteractionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlutterInteractionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7597D1F69F32B4902A31CC69 /* Pods-FlutterInteractionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterInteractionTests.release.xcconfig"; path = "Target Support Files/Pods-FlutterInteractionTests/Pods-FlutterInteractionTests.release.xcconfig"; sourceTree = "<group>"; };
+		A538B3E220AA64B362E20E21 /* Pods-FlutterInteractionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterInteractionUITests.debug.xcconfig"; path = "Target Support Files/Pods-FlutterInteractionUITests/Pods-FlutterInteractionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD3817DF8F14CC81F5262C36 /* Pods-FlutterInteractionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterInteractionUITests.release.xcconfig"; path = "Target Support Files/Pods-FlutterInteractionUITests/Pods-FlutterInteractionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F3EBD6183CC23A0BC2E6921B /* Pods-FlutterInteraction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterInteraction.release.xcconfig"; path = "Target Support Files/Pods-FlutterInteraction/Pods-FlutterInteraction.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		321957452303A69E006B6EFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09EEB7A6803E5575E73BAE8B /* libPods-FlutterInteraction.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3219575D2303A69F006B6EFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBAE0A9AFD99D30D3BF138A /* libPods-FlutterInteractionTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		321957682303A69F006B6EFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C807DA3CE8C30F99CF64D3 /* libPods-FlutterInteractionUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1DA5FFEF3860200DE7C2C455 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15C7701425190BFBCEEF29E0 /* Pods-FlutterInteraction.debug.xcconfig */,
+				F3EBD6183CC23A0BC2E6921B /* Pods-FlutterInteraction.release.xcconfig */,
+				43FFE560D706F43E143FB1F7 /* Pods-FlutterInteractionTests.debug.xcconfig */,
+				7597D1F69F32B4902A31CC69 /* Pods-FlutterInteractionTests.release.xcconfig */,
+				A538B3E220AA64B362E20E21 /* Pods-FlutterInteractionUITests.debug.xcconfig */,
+				AD3817DF8F14CC81F5262C36 /* Pods-FlutterInteractionUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3219573F2303A69E006B6EFB = {
+			isa = PBXGroup;
+			children = (
+				3219574A2303A69E006B6EFB /* FlutterInteraction */,
+				321957632303A69F006B6EFB /* FlutterInteractionTests */,
+				3219576E2303A69F006B6EFB /* FlutterInteractionUITests */,
+				321957492303A69E006B6EFB /* Products */,
+				1DA5FFEF3860200DE7C2C455 /* Pods */,
+				3546AD2B1B84EB6587BE9274 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		321957492303A69E006B6EFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				321957482303A69E006B6EFB /* FlutterInteraction.app */,
+				321957602303A69F006B6EFB /* FlutterInteractionTests.xctest */,
+				3219576B2303A69F006B6EFB /* FlutterInteractionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3219574A2303A69E006B6EFB /* FlutterInteraction */ = {
+			isa = PBXGroup;
+			children = (
+				3219574B2303A69E006B6EFB /* AppDelegate.h */,
+				3219574C2303A69E006B6EFB /* AppDelegate.m */,
+				3219574E2303A69E006B6EFB /* ViewController.h */,
+				3219574F2303A69E006B6EFB /* ViewController.m */,
+				32DA96EA23064C5A00DA145D /* FirstViewController.h */,
+				32DA96EB23064C5A00DA145D /* FirstViewController.m */,
+				321957542303A69F006B6EFB /* Assets.xcassets */,
+				321957562303A69F006B6EFB /* LaunchScreen.storyboard */,
+				321957592303A69F006B6EFB /* Info.plist */,
+				3219575A2303A69F006B6EFB /* main.m */,
+			);
+			path = FlutterInteraction;
+			sourceTree = "<group>";
+		};
+		321957632303A69F006B6EFB /* FlutterInteractionTests */ = {
+			isa = PBXGroup;
+			children = (
+				321957642303A69F006B6EFB /* FlutterInteractionTests.m */,
+				321957662303A69F006B6EFB /* Info.plist */,
+			);
+			path = FlutterInteractionTests;
+			sourceTree = "<group>";
+		};
+		3219576E2303A69F006B6EFB /* FlutterInteractionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3219576F2303A69F006B6EFB /* FlutterInteractionUITests.m */,
+				321957712303A69F006B6EFB /* Info.plist */,
+			);
+			path = FlutterInteractionUITests;
+			sourceTree = "<group>";
+		};
+		3546AD2B1B84EB6587BE9274 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1547189AD6BDFFE0CD931E03 /* libPods-FlutterInteraction.a */,
+				62BD7A7EAD4F513CA1D9688E /* libPods-FlutterInteractionTests.a */,
+				60849A80D4049C79527A68CF /* libPods-FlutterInteractionUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		321957472303A69E006B6EFB /* FlutterInteraction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 321957742303A69F006B6EFB /* Build configuration list for PBXNativeTarget "FlutterInteraction" */;
+			buildPhases = (
+				3219577D2303A9F3006B6EFB /* Run Script */,
+				D66920BF76BB55027599C6C5 /* [CP] Check Pods Manifest.lock */,
+				321957442303A69E006B6EFB /* Sources */,
+				321957452303A69E006B6EFB /* Frameworks */,
+				321957462303A69E006B6EFB /* Resources */,
+				524B0829240D16D28A3C8F5C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlutterInteraction;
+			productName = FlutterInteraction;
+			productReference = 321957482303A69E006B6EFB /* FlutterInteraction.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3219575F2303A69F006B6EFB /* FlutterInteractionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 321957772303A69F006B6EFB /* Build configuration list for PBXNativeTarget "FlutterInteractionTests" */;
+			buildPhases = (
+				01B5F38F7CA51BED9E515C3D /* [CP] Check Pods Manifest.lock */,
+				3219575C2303A69F006B6EFB /* Sources */,
+				3219575D2303A69F006B6EFB /* Frameworks */,
+				3219575E2303A69F006B6EFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				321957622303A69F006B6EFB /* PBXTargetDependency */,
+			);
+			name = FlutterInteractionTests;
+			productName = FlutterInteractionTests;
+			productReference = 321957602303A69F006B6EFB /* FlutterInteractionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3219576A2303A69F006B6EFB /* FlutterInteractionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3219577A2303A69F006B6EFB /* Build configuration list for PBXNativeTarget "FlutterInteractionUITests" */;
+			buildPhases = (
+				962C67419364C8DD8EAA2E78 /* [CP] Check Pods Manifest.lock */,
+				321957672303A69F006B6EFB /* Sources */,
+				321957682303A69F006B6EFB /* Frameworks */,
+				321957692303A69F006B6EFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3219576D2303A69F006B6EFB /* PBXTargetDependency */,
+			);
+			name = FlutterInteractionUITests;
+			productName = FlutterInteractionUITests;
+			productReference = 3219576B2303A69F006B6EFB /* FlutterInteractionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		321957402303A69E006B6EFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = wg;
+				TargetAttributes = {
+					321957472303A69E006B6EFB = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					3219575F2303A69F006B6EFB = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 321957472303A69E006B6EFB;
+					};
+					3219576A2303A69F006B6EFB = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 321957472303A69E006B6EFB;
+					};
+				};
+			};
+			buildConfigurationList = 321957432303A69E006B6EFB /* Build configuration list for PBXProject "FlutterInteraction" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3219573F2303A69E006B6EFB;
+			productRefGroup = 321957492303A69E006B6EFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				321957472303A69E006B6EFB /* FlutterInteraction */,
+				3219575F2303A69F006B6EFB /* FlutterInteractionTests */,
+				3219576A2303A69F006B6EFB /* FlutterInteractionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		321957462303A69E006B6EFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				321957582303A69F006B6EFB /* LaunchScreen.storyboard in Resources */,
+				321957552303A69F006B6EFB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3219575E2303A69F006B6EFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		321957692303A69F006B6EFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01B5F38F7CA51BED9E515C3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlutterInteractionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3219577D2303A9F3006B6EFB /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" buiObject-cld\n\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed\n";
+		};
+		524B0829240D16D28A3C8F5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlutterInteraction/Pods-FlutterInteraction-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlutterInteraction/Pods-FlutterInteraction-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlutterInteraction/Pods-FlutterInteraction-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		962C67419364C8DD8EAA2E78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlutterInteractionUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D66920BF76BB55027599C6C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlutterInteraction-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		321957442303A69E006B6EFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				321957502303A69E006B6EFB /* ViewController.m in Sources */,
+				3219575B2303A69F006B6EFB /* main.m in Sources */,
+				3219574D2303A69E006B6EFB /* AppDelegate.m in Sources */,
+				32DA96EC23064C5A00DA145D /* FirstViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3219575C2303A69F006B6EFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				321957652303A69F006B6EFB /* FlutterInteractionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		321957672303A69F006B6EFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				321957702303A69F006B6EFB /* FlutterInteractionUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		321957622303A69F006B6EFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 321957472303A69E006B6EFB /* FlutterInteraction */;
+			targetProxy = 321957612303A69F006B6EFB /* PBXContainerItemProxy */;
+		};
+		3219576D2303A69F006B6EFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 321957472303A69E006B6EFB /* FlutterInteraction */;
+			targetProxy = 3219576C2303A69F006B6EFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		321957562303A69F006B6EFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				321957572303A69F006B6EFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		321957722303A69F006B6EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		321957732303A69F006B6EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		321957752303A69F006B6EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15C7701425190BFBCEEF29E0 /* Pods-FlutterInteraction.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 49T87S5RLN;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = FlutterInteraction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wg.FlutterInteraction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		321957762303A69F006B6EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3EBD6183CC23A0BC2E6921B /* Pods-FlutterInteraction.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 49T87S5RLN;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = FlutterInteraction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wg.FlutterInteraction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		321957782303A69F006B6EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43FFE560D706F43E143FB1F7 /* Pods-FlutterInteractionTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 49T87S5RLN;
+				INFOPLIST_FILE = FlutterInteractionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wg.FlutterInteractionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlutterInteraction.app/FlutterInteraction";
+			};
+			name = Debug;
+		};
+		321957792303A69F006B6EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7597D1F69F32B4902A31CC69 /* Pods-FlutterInteractionTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 49T87S5RLN;
+				INFOPLIST_FILE = FlutterInteractionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wg.FlutterInteractionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlutterInteraction.app/FlutterInteraction";
+			};
+			name = Release;
+		};
+		3219577B2303A69F006B6EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A538B3E220AA64B362E20E21 /* Pods-FlutterInteractionUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 49T87S5RLN;
+				INFOPLIST_FILE = FlutterInteractionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wg.FlutterInteractionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlutterInteraction;
+			};
+			name = Debug;
+		};
+		3219577C2303A69F006B6EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD3817DF8F14CC81F5262C36 /* Pods-FlutterInteractionUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 49T87S5RLN;
+				INFOPLIST_FILE = FlutterInteractionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wg.FlutterInteractionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlutterInteraction;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		321957432303A69E006B6EFB /* Build configuration list for PBXProject "FlutterInteraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				321957722303A69F006B6EFB /* Debug */,
+				321957732303A69F006B6EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		321957742303A69F006B6EFB /* Build configuration list for PBXNativeTarget "FlutterInteraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				321957752303A69F006B6EFB /* Debug */,
+				321957762303A69F006B6EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		321957772303A69F006B6EFB /* Build configuration list for PBXNativeTarget "FlutterInteractionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				321957782303A69F006B6EFB /* Debug */,
+				321957792303A69F006B6EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3219577A2303A69F006B6EFB /* Build configuration list for PBXNativeTarget "FlutterInteractionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3219577B2303A69F006B6EFB /* Debug */,
+				3219577C2303A69F006B6EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 321957402303A69E006B6EFB /* Project object */;
+}
