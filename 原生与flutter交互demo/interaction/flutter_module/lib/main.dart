@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+//引入下面这个，是为了调用window的defaultRouteName拿到route判断跳转哪个界面
 import 'dart:ui';
 import 'package:flutter/services.dart';
 import 'package:flutter_module/flutter_first.dart';
 
 void main() => runApp(_widgetForRoute(window.defaultRouteName));
 
+//根据原生给的民资，确定显示那个界面
 Widget _widgetForRoute(String route){
   switch (route){
     case 'myApp':
