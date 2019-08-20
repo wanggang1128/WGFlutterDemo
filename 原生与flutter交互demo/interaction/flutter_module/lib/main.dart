@@ -6,7 +6,7 @@ import 'package:flutter_module/flutter_first.dart';
 
 void main() => runApp(_widgetForRoute(window.defaultRouteName));
 
-//根据原生给的民资，确定显示那个界面
+//根据原生给的名字，确定显示那个界面
 Widget _widgetForRoute(String route){
   switch (route){
     case 'myApp':
@@ -117,18 +117,14 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
       appBar: AppBar(
 
         title: Text(widget.title),
-//        automaticallyImplyLeading: true,
-        leading: Container(
-          color: Colors.green,
-          child: RaisedButton(
-            onPressed: (){
+        leading: InkWell(
+          onTap: (){
               methodChannel.invokeMethod('backToViewController');
             },
-            child: Icon(
+          child: Icon(
               Icons.arrow_back,
-//              color: Colors.white,
+              color: Colors.white,
             ),
-          ),
         ),
       ),
       body: Center(

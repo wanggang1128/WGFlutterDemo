@@ -67,16 +67,13 @@ class _FlutterFirstState extends State<FlutterFirst> with WidgetsBindingObserver
         child: Scaffold(
           appBar: AppBar(
             title: Text('我是flutter-->FlutterFirst页面'),
-            leading: Container(
-              color: Colors.green,
-              child: RaisedButton(
-                onPressed: (){
-                  methodChannel.invokeMethod('backToViewController');
-                },
-                child: Icon(
-                  Icons.arrow_back,
-//              color: Colors.white,
-                ),
+            leading: InkWell(
+              onTap: (){
+                methodChannel.invokeMethod('backToViewController');
+              },
+              child: Icon(
+                Icons.arrow_back,
+                color: Colors.white,
               ),
             ),
           ),

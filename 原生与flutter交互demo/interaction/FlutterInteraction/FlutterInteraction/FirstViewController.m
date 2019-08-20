@@ -38,7 +38,7 @@
 
 - (void)btnClicked{
     FlutterViewController *flutterVC = [FlutterViewController new];
-    flutterVC.navigationItem.title = @"Demo";
+//    flutterVC.navigationItem.title = @"标题";
     [flutterVC setInitialRoute:@"home"];
     
     NSString *eventChannelName = @"wg/native_post";

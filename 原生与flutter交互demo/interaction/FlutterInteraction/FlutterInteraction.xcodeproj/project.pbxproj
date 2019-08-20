@@ -181,8 +181,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 321957742303A69F006B6EFB /* Build configuration list for PBXNativeTarget "FlutterInteraction" */;
 			buildPhases = (
-				3219577D2303A9F3006B6EFB /* Run Script */,
 				D66920BF76BB55027599C6C5 /* [CP] Check Pods Manifest.lock */,
+				3219577D2303A9F3006B6EFB /* Run Script */,
 				321957442303A69E006B6EFB /* Sources */,
 				321957452303A69E006B6EFB /* Frameworks */,
 				321957462303A69E006B6EFB /* Resources */,
