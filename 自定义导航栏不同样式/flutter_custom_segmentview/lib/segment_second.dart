@@ -38,7 +38,7 @@ class _SegmentSecondState extends State<SegmentSecond> with SingleTickerProvider
         leading: InkWell(
           child: Icon(
             Icons.arrow_back_ios,
-            color: Colors.white,
+            color: Colors.black,
           ),
           onTap: (){
             Navigator.pop(context);

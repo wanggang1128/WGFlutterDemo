@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_segmentview/segement_first.dart';
 import 'package:flutter_custom_segmentview/segment_second.dart';
 import 'package:flutter_custom_segmentview/segment_third.dart';
+import 'package:flutter_custom_segmentview/segment_fourth.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.pink
+        primaryColor: Colors.white
       ),
       home: HomePage(),
     );
@@ -46,6 +47,12 @@ class HomePage extends StatelessWidget {
             title: Text('第3种'),
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>SegmentThird()));
+            },
+          ),
+          ListTile(
+            title: Text('第4种'),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SegmentFourth()));
             },
           ),
         ],

@@ -10,11 +10,11 @@ class _SegmentThirdState extends State<SegmentThird> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text("AppBarDemoPage"),
+        title:Text("第3中"),
         // backgroundColor: Colors.red,
         centerTitle:true,
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: Icon(Icons.arrow_back_ios, color: Colors.black,),
           onPressed: (){
             Navigator.pop(context);
           },

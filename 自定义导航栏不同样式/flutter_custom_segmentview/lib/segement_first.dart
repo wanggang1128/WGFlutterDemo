@@ -13,7 +13,7 @@ class _SegmentFirstState extends State<SegmentFirst> {
       child: Scaffold(
         appBar: AppBar(
           leading: InkWell(
-            child: Icon(Icons.arrow_back_ios,color: Colors.white,),
+            child: Icon(Icons.arrow_back_ios,color: Colors.black,),
             onTap: (){
               Navigator.pop(context);
             },
