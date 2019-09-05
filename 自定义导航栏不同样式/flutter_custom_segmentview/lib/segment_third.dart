@@ -11,7 +11,6 @@ class _SegmentThirdState extends State<SegmentThird> {
     return Scaffold(
       appBar: AppBar(
         title:Text("第3中"),
-        // backgroundColor: Colors.red,
         centerTitle:true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: Colors.black,),
@@ -19,6 +18,7 @@ class _SegmentThirdState extends State<SegmentThird> {
             Navigator.pop(context);
           },
         ),
+
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),

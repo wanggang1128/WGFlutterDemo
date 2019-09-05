@@ -19,7 +19,12 @@ class _SegmentFourthState extends State<SegmentFourth> {
             Navigator.pop(context);
           },
         ),
-        title: _segmentTile(),
+        title: _segmentTile(context),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(null),
+          ),
+        ],
       ),
       body: _bodyWidget(context, currentIndex),
     );
@@ -39,7 +44,7 @@ class _SegmentFourthState extends State<SegmentFourth> {
   
 
   //segment组件
-  Widget _segmentTile() {
+  Widget _segmentTile(context) {
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -49,9 +54,9 @@ class _SegmentFourthState extends State<SegmentFourth> {
           decoration: BoxDecoration(
             color: currentIndex==0?Colors.blue:Colors.white,
             border: Border(
-              top: BorderSide(color: Colors.black38,width: 1),
-              bottom: BorderSide(color: Colors.black38,width: 1),
-              left: BorderSide(color: Colors.black38,width: 1),
+              top: BorderSide(color: Colors.blue,width: 1),
+              bottom: BorderSide(color: Colors.blue,width: 1),
+              left: BorderSide(color: Colors.blue,width: 1),
               ),
           ),
           child: InkWell(
@@ -64,7 +69,7 @@ class _SegmentFourthState extends State<SegmentFourth> {
               '个人订单',
               style: TextStyle(
                   color: currentIndex==0?Colors.white:Colors.blue,
-                  fontSize: 18
+                  fontSize: 15
               ),
             ),
           ),
@@ -74,9 +79,9 @@ class _SegmentFourthState extends State<SegmentFourth> {
           decoration: BoxDecoration(
             color: currentIndex==1?Colors.blue:Colors.white,
             border: Border(
-              top: BorderSide(color: Colors.black38,width: 1),
-              bottom: BorderSide(color: Colors.black38,width: 1),
-              right: BorderSide(color: Colors.black38,width: 1),
+              top: BorderSide(color: Colors.blue,width: 1),
+              bottom: BorderSide(color: Colors.blue,width: 1),
+              right: BorderSide(color: Colors.blue,width: 1),
             ),
           ),
           child: InkWell(
@@ -89,7 +94,7 @@ class _SegmentFourthState extends State<SegmentFourth> {
               '专科组订单',
               style: TextStyle(
                   color: currentIndex==1?Colors.white:Colors.blue,
-                  fontSize: 18
+                  fontSize: 15
               ),
             ),
           ),
